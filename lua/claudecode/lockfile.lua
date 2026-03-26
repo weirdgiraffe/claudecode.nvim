@@ -113,7 +113,7 @@ function M.create(port, auth_token)
 
   -- Prepare lock file content
   local lock_content = {
-    pid = vim.fn.getpid(),
+    pid = 1,
     workspaceFolders = workspace_folders,
     ideName = "Neovim",
     transport = "ws",

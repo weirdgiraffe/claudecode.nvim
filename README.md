@@ -1,5 +1,11 @@
 # claudecode.nvim
 
+> **Fork note:** This is a fork tailored for running Claude Code inside a container. The lock file
+> includes a `pid` field that Claude Code uses to check whether the IDE is still running. In a
+> containerized environment this check is unreliable, and since the plugin manages the Claude
+> process lifecycle itself, the check is unnecessary. This fork hardcodes `pid` to `1` — a PID
+> that is always present in a container — so Claude Code never mistakenly considers the IDE dead.
+
 [![Tests](https://github.com/coder/claudecode.nvim/actions/workflows/test.yml/badge.svg)](https://github.com/coder/claudecode.nvim/actions/workflows/test.yml)
 ![Neovim version](https://img.shields.io/badge/Neovim-0.8%2B-green)
 ![Status](https://img.shields.io/badge/Status-beta-blue)
